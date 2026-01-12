@@ -5,6 +5,7 @@ import { getTalks, getTalkFilterOptions } from '@/data/services/talk';
 import type { FilterType } from '@/types/filters';
 
 export default async function RootPage({ searchParams }: PageProps<'/'>) {
+  console.log('Rendering RootPage with searchParams:', searchParams);
   const activeFilters: FilterType = await searchParams;
   const filterOptions = await getTalkFilterOptions();
   const talks = getTalks(activeFilters);
